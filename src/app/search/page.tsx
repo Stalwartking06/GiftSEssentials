@@ -9,6 +9,7 @@ import MainLayout from "@/layouts/MainLayout";
 import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
 import Container from "@/components/common/Container/Container";
 import Filters from "@/components/category/Filters/Filters";
+import { SkeletonGrid } from "@/components/common/Skeleton/SkeletonProductCard";
 import styles from "./searchPage.module.css";
 
 // MAIN SEARCH RESULTS COMPONENT (needs Suspense wrapping)
@@ -110,8 +111,14 @@ export default function Page() {
     <MainLayout>
       <Breadcrumbs items={[{ label: "SEARCH" }]} />
       <Suspense fallback={
-        <div style={{ padding: "100px 0", textAlign: "center" }}>
-          <h2>Meditating on search results...</h2>
+        <div className={styles.contentSection}>
+          <Container>
+            <header className={styles.header} style={{ borderBottom: "none" }}>
+              <p className={styles.sub}>SEARCHING</p>
+              <h1>Connecting with divine items...</h1>
+            </header>
+            <SkeletonGrid />
+          </Container>
         </div>
       }>
         <SearchResults />

@@ -1,0 +1,126 @@
+.card {
+  position: relative;
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  height: 100%;
+}
+
+.imageShimmer {
+  width: 100%;
+  height: 330px;
+  background: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .imageShimmer {
+    height: 270px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageShimmer {
+    height: 230px;
+  }
+}
+
+.content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tagShimmer {
+  width: 30%;
+  height: 12px;
+  border-radius: 4px;
+  background: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.titleShimmer {
+  width: 80%;
+  height: 26px;
+  border-radius: 6px;
+  background: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.subtitleShimmer {
+  width: 95%;
+  height: 16px;
+  border-radius: 4px;
+  background: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.priceShimmer {
+  width: 40%;
+  height: 20px;
+  border-radius: 4px;
+  background: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SHIMMER EFFECT KEYFRAMES TRIGGER */
+.imageShimmer::after,
+.tagShimmer::after,
+.titleShimmer::after,
+.subtitleShimmer::after,
+.priceShimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: shimmerAnim 1.6s infinite;
+}
+
+@keyframes shimmerAnim {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* GRID LAYOUT */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
