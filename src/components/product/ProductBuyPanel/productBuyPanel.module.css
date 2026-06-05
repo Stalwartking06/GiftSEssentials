@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.stockRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.inStock {
+  color: #1d8b42;
+}
+
+.outOfStock {
+  color: #ff4d4d;
+}
+
+.sku {
+  color: #999;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .actionsRow {
+    flex-direction: column;
+  }
+}
+
+/* COUNTER */
+.counter {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 99px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.counter button {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.counter button:hover {
+  background: #eee;
+  color: var(--primary);
+}
+
+.counter span {
+  width: 40px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* CART BUTTON */
+.cartBtn {
+  flex: 1;
+  height: 46px;
+  border-radius: 99px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(123,0,0,0.18);
+  transition: var(--transition);
+}
+
+.cartBtn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* WISHLIST BUTTON */
+.wishlistBtn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.wishlistBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #fdfaf6;
+}
+
+.activeWishlist {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  background: #fff5f5 !important;
+}

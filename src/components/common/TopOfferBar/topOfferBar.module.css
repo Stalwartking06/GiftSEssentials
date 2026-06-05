@@ -1,0 +1,62 @@
+.offerBar {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: var(--z-navbar);
+  background: linear-gradient(
+    90deg,
+    var(--primary-dark) 0%,
+    var(--primary) 50%,
+    var(--primary-dark) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .offerBar {
+    height: 42px;
+  }
+}
+
+/* SHIMMER */
+.offerBar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 7s linear infinite;
+}
+
+/* TEXT */
+.offerText {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  color: rgba(255, 255, 255, 0.96);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .offerText {
+    height: 42px;
+    padding: 0 14px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+}

@@ -1,0 +1,98 @@
+.container {
+  padding: 30px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: sticky;
+  top: 170px; /* Aligned below header sticky wrapper */
+}
+
+.filterGroup h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* PRICE RANGE */
+.rangeWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rangeInput {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #eee;
+  outline: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rangeInput::-webkit-slider-thumb:hover {
+  background: var(--primary);
+  transform: scale(1.1);
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* CHECKBOX */
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+/* SELECT */
+.select {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 13px;
+  color: var(--text-dark);
+  background: #fafafa;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.select:hover {
+  border-color: var(--gold);
+}
